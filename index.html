@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio Vivid Voice</title>
-    <link rel="icon" href="https://i.imgur.com/DF0xgbn.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="https://i.imgur.com/DF0xgbn.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;700&display=swap');
 
@@ -18,9 +18,8 @@
             margin: 0;
         }
 
-        /* Main Container */
         .main-container {
-            background: url('https://source.unsplash.com/1600x900/?dj,party') no-repeat center;
+            background: url('https://i.imgur.com/your-confirmed-image.jpg') no-repeat center; /* Replace with your confirmed image URL */
             background-size: cover;
             position: relative;
             min-height: 100vh;
@@ -38,12 +37,10 @@
             z-index: -1;
         }
 
-        /* Navbar */
         .navbar {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             padding: 15px 0;
-            margin-bottom: 15px;
         }
 
         .navbar-brand {
@@ -74,7 +71,12 @@
             text-shadow: 0 0 10px #ff0080;
         }
 
-        /* Hero Section */
+        @media (max-width: 768px) {
+            .navbar {
+                margin-bottom: 0;
+            }
+        }
+
         .hero {
             padding: 30px 0 50px;
             text-align: center;
@@ -102,7 +104,6 @@
             margin: 35px 0 0;
         }
 
-        /* Equalizer Animation */
         .equalizer {
             display: flex;
             justify-content: center;
@@ -124,11 +125,10 @@
         .bar:nth-child(5) { animation-delay: 0.8s; }
 
         @keyframes bounce {
-            0% { height: 8px; }
-            100% { height: 30px; }
+            0% { height: 0.5em; }
+            100% { height: 1.875em; }
         }
 
-        /* Audio Player */
         #player {
             padding: 30px 0;
         }
@@ -163,7 +163,6 @@
             padding: 5px;
         }
 
-        /* Youth Section */
         #youth {
             padding: 30px 0;
             text-align: center;
@@ -177,7 +176,6 @@
             margin-bottom: 15px;
         }
 
-        /* Social Buttons */
         #connect {
             padding: 30px 0;
             text-align: center;
@@ -216,7 +214,6 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
         }
 
-        /* Footer */
         footer {
             background: #000;
             padding: 15px;
@@ -227,35 +224,34 @@
         }
     </style>
 </head>
+
 <body>
     <div class="main-container">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="https://i.imgur.com/dBeUl5M.png" alt="Logo"> Radio Vivid Voice 📢
+                    <img src="https://i.imgur.com/dBeUl5M.png" alt="Radio Vivid Voice Logo"> Radio Vivid Voice 📢
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#player">Live</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#request">Request</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showAbout(); return false;">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="playLive(); return false;">Live</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="songRequest(); return false;">Request</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showContact(); return false;">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <!-- Hero Section -->
         <header class="hero">
             <div class="container">
                 <h2>জোরসে আওয়াজ তোলো</h2>
                 <h1>Be Loud, Be Bold, Be Heard</h1>
                 <p>24/7 Streaming | Music & More</p>
-                <div class="equalizer">
+                <div class="equalizer" aria-hidden="true">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -265,46 +261,114 @@
             </div>
         </header>
 
-        <!-- Audio Player Section -->
         <section id="player">
             <h2>Live Now</h2>
             <div class="audio-player">
-                <audio controls>
+                <audio controls id="audioPlayer">
                     <source src="https://stream.zeno.fm/xuin6ocdc2juv" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
             </div>
         </section>
 
-        <!-- Youth Section -->
         <section id="youth">
             <div class="container">
                 <h3>Rise Up, Speak Out, Shape the Future</h3>
-                
             </div>
         </section>
 
-        <!-- Connect Section -->
         <section id="connect">
             <div class="container">
-                <a href="mailto:radiovividvoice@gmail.com?subject=Song%20Request" class="social-btn email-btn">
+                <a href="#" onclick="songRequest(); return false;" class="social-btn email-btn" aria-label="Request a Song via Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://facebook.com/radiovividvoice" target="_blank" class="social-btn fb-btn">
+                <a href="https://facebook.com/radiovividvoice" target="_blank" class="social-btn fb-btn" aria-label="Visit Facebook Page">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://instagram.com/radio_vivid_voice" target="_blank" class="social-btn ig-btn">
+                <a href="https://instagram.com/radio_vivid_voice" target="_blank" class="social-btn ig-btn" aria-label="Visit Instagram Page">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
         </section>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2023 Radio Vivid Voice. All Rights Reserved.</p>
+        <p>© <script>document.write(new Date().getFullYear())</script> Radio Vivid Voice. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        const audioPlayer = document.getElementById('audioPlayer');
+
+        function closeExistingModals() {
+            document.querySelectorAll('.modal-dialog').forEach(modal => modal.remove());
+        }
+
+        function showAbout() {
+            closeExistingModals();
+            const aboutContent = `
+                <div style="background: rgba(0, 0, 0, 0.9); padding: 20px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);">
+                    <h2 style="color: #ff0080; text-shadow: 0 0 15px #ff0080; font-family: 'Orbitron', sans-serif;">About Radio Vivid Voice</h2>
+                    <p style="color: #00f2ff;">Radio Vivid Voice is your 24/7 online radio station dedicated to amplifying youth voices, playing the latest hits, and creating a platform for expression. We believe in being loud, bold, and heard!</p>
+                    <button onclick="document.querySelector('.modal-dialog').remove()" style="background: #ff0080; border: none; padding: 10px 20px; border-radius: 10px; color: #fff; cursor: pointer;">Close</button>
+                </div>
+            `;
+            const dialog = document.createElement('div');
+            dialog.className = 'modal-dialog';
+            dialog.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;';
+            dialog.innerHTML = aboutContent;
+            document.body.appendChild(dialog);
+        }
+
+        function playLive() {
+            audioPlayer.play();
+        }
+
+        function songRequest() {
+            const mailBody = `Name:\nLocation:\nSong Name:\nArtist Name:\nAlbum/Movie:\nDedicated to:\nMessage for the loved one:`;
+            window.location.href = `mailto:radiovividvoice@gmail.com?subject=Song%20Request&body=${encodeURIComponent(mailBody)}`;
+        }
+
+        function showContact() {
+            closeExistingModals();
+            const contactContent = `
+                <div style="background: rgba(0, 0, 0, 0.9); padding: 20px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3); width: 90%; max-width: 500px;">
+                    <h2 style="color: #ff0080; text-shadow: 0 0 15px #ff0080; font-family: 'Orbitron', sans-serif;">Contact Us</h2>
+                    <p style="color: #00f2ff;">Email: radiovividvoice@gmail.com</p>
+                    <p style="color: #00f2ff;"><a href="https://facebook.com/radiovividvoice" target="_blank" style="color: #00f2ff;">Facebook Page</a></p>
+                    <p style="color: #00f2ff;"><a href="https://instagram.com/radio_vivid_voice" target="_blank" style="color: #00f2ff;">Instagram</a></p>
+                    <form id="contactForm" style="margin-top: 20px;">
+                        <input type="text" id="name" placeholder="Name" required style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff;">
+                        <input type="text" id="location" placeholder="Location" style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff;">
+                        <input type="text" id="subject" placeholder="Subject" required style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff;">
+                        <textarea id="message" placeholder="Message" required style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff; min-height: 100px;"></textarea>
+                        <button type="button" onclick="sendContact()" style="background: #ff0080; border: none; padding: 10px 20px; border-radius: 10px; color: #fff; cursor: pointer;">Send</button>
+                        <button type="button" onclick="document.querySelector('.modal-dialog').remove()" style="background: #00f2ff; border: none; padding: 10px 20px; border-radius: 10px; color: #000; cursor: pointer; margin-left: 10px;">Close</button>
+                    </form>
+                </div>
+            `;
+            const dialog = document.createElement('div');
+            dialog.className = 'modal-dialog';
+            dialog.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;';
+            dialog.innerHTML = contactContent;
+            document.body.appendChild(dialog);
+        }
+
+        function sendContact() {
+            const name = document.getElementById('name').value;
+            const location = document.getElementById('location').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !subject || !message) {
+                alert('Please fill in Name, Subject, and Message fields.');
+                return;
+            }
+
+            const mailSubject = `${name} + ${location} + ${subject}`;
+            const mailBody = `Message: ${message}`;
+            window.location.href = `mailto:radiovividvoice@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+        }
+    </script>
 </body>
-      </html>
+</html>
