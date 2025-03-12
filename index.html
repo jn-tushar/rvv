@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radio Vivid Voice</title>
-    <link rel="icon" href="https://i.imgur.com/DF0xgbn.png" type="image/png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+    <!-- SEO Optimized Title -->
+    <title>Radio Vivid Voice - 24/7 Independent Youth Radio</title>
+    <link rel="icon" href="https://i.imgur.com/DF0xgbn.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Radio Vivid Voice - Your 24/7 independent radio station amplifying youth voices with the best hits. Non-profit and commercial-free!">
+    <meta name="keywords" content="independent radio, youth radio, 24/7 music, online radio, Radio Vivid Voice, non-profit radio, music hits">
+    <meta name="author" content="Radio Vivid Voice Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rvvlive.vercel.app/">
+
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Radio Vivid Voice - 24/7 Independent Youth Radio">
+    <meta property="og:description" content="Listen to Radio Vivid Voice for 24/7 music hits and youth expression. A non-profit platform to be loud, bold, and heard!">
+    <meta property="og:url" content="https://rvvlive.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://i.imgur.com/DF0xgbn.png">
+    <meta property="og:site_name" content="Radio Vivid Voice">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Radio Vivid Voice - 24/7 Independent Youth Radio">
+    <meta name="twitter:description" content="Tune into Radio Vivid Voice for non-stop music and youth voices. Commercial-free and passionate!">
+    <meta name="twitter:image" content="https://i.imgur.com/DF0xgbn.png">
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;700&display=swap');
 
@@ -19,7 +42,7 @@
         }
 
         .main-container {
-            background: url('https://i.imgur.com/your-confirmed-image.jpg') no-repeat center; /* Replace with your confirmed image URL */
+            background: url('https://source.unsplash.com/1600x900/?dj,party') no-repeat center;
             background-size: cover;
             position: relative;
             min-height: 100vh;
@@ -41,6 +64,7 @@
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             padding: 15px 0;
+            margin-bottom: 15px;
         }
 
         .navbar-brand {
@@ -69,12 +93,6 @@
         .nav-link:hover {
             color: #ff0080 !important;
             text-shadow: 0 0 10px #ff0080;
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                margin-bottom: 0;
-            }
         }
 
         .hero {
@@ -125,8 +143,8 @@
         .bar:nth-child(5) { animation-delay: 0.8s; }
 
         @keyframes bounce {
-            0% { height: 0.5em; }
-            100% { height: 1.875em; }
+            0% { height: 8px; }
+            100% { height: 30px; }
         }
 
         #player {
@@ -222,17 +240,24 @@
             position: relative;
             z-index: 2;
         }
+
+        .programme-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
     </style>
 </head>
 
 <body>
     <div class="main-container">
-        <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="https://rvvlive.vercel.app/">
                     <img src="https://i.imgur.com/dBeUl5M.png" alt="Radio Vivid Voice Logo"> Radio Vivid Voice 📢
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -240,6 +265,8 @@
                         <li class="nav-item"><a class="nav-link" href="#" onclick="showAbout(); return false;">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#" onclick="playLive(); return false;">Live</a></li>
                         <li class="nav-item"><a class="nav-link" href="#" onclick="songRequest(); return false;">Request</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showProgrammes(); return false;">Programmes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" onclick="showAnnouncement(); return false;">Announcement</a></li>
                         <li class="nav-item"><a class="nav-link" href="#" onclick="showContact(); return false;">Contact</a></li>
                     </ul>
                 </div>
@@ -251,7 +278,7 @@
                 <h2>জোরসে আওয়াজ তোলো</h2>
                 <h1>Be Loud, Be Bold, Be Heard</h1>
                 <p>24/7 Streaming | Music & More</p>
-                <div class="equalizer" aria-hidden="true">
+                <div class="equalizer">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
@@ -279,13 +306,13 @@
 
         <section id="connect">
             <div class="container">
-                <a href="#" onclick="songRequest(); return false;" class="social-btn email-btn" aria-label="Request a Song via Email">
+                <a href="#" onclick="songRequest(); return false;" class="social-btn email-btn">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://facebook.com/radiovividvoice" target="_blank" class="social-btn fb-btn" aria-label="Visit Facebook Page">
+                <a href="https://facebook.com/radiovividvoice" target="_blank" class="social-btn fb-btn">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://instagram.com/radio_vivid_voice" target="_blank" class="social-btn ig-btn" aria-label="Visit Instagram Page">
+                <a href="https://instagram.com/radio_vivid_voice" target="_blank" class="social-btn ig-btn">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -296,25 +323,20 @@
         <p>© <script>document.write(new Date().getFullYear())</script> Radio Vivid Voice. All Rights Reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const audioPlayer = document.getElementById('audioPlayer');
 
-        function closeExistingModals() {
-            document.querySelectorAll('.modal-dialog').forEach(modal => modal.remove());
-        }
-
         function showAbout() {
-            closeExistingModals();
             const aboutContent = `
                 <div style="background: rgba(0, 0, 0, 0.9); padding: 20px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);">
                     <h2 style="color: #ff0080; text-shadow: 0 0 15px #ff0080; font-family: 'Orbitron', sans-serif;">About Radio Vivid Voice</h2>
-                    <p style="color: #00f2ff;">Radio Vivid Voice is your 24/7 online radio station dedicated to amplifying youth voices, playing the latest hits, and creating a platform for expression. We believe in being loud, bold, and heard!</p>
-                    <button onclick="document.querySelector('.modal-dialog').remove()" style="background: #ff0080; border: none; padding: 10px 20px; border-radius: 10px; color: #fff; cursor: pointer;">Close</button>
+                    <p style="color: #00f2ff;">Radio Vivid Voice is your 24/7 independent radio station dedicated to amplifying youth voices, playing the best hits, and creating a platform for expression. We believe in being loud, bold, and heard!</p>
+                    <p style="color: #00f2ff; font-style: italic; margin-top: 20px;">Disclaimer: Dear Listeners, Radio Vivid Voice is a passion project and will always remain non-profit and commercial-free. The adverts you occasionally hear are part of the broadcasting platform's support structure. Thank you for being understanding!</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: #ff0080; border: none; padding: 10px 20px; border-radius: 10px; color: #fff; cursor: pointer;">Close</button>
                 </div>
             `;
             const dialog = document.createElement('div');
-            dialog.className = 'modal-dialog';
             dialog.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;';
             dialog.innerHTML = aboutContent;
             document.body.appendChild(dialog);
@@ -329,8 +351,42 @@
             window.location.href = `mailto:radiovividvoice@gmail.com?subject=Song%20Request&body=${encodeURIComponent(mailBody)}`;
         }
 
+        function showProgrammes() {
+            const programmesContent = `
+                <div style="background: rgba(0, 0, 0, 0.9); padding: 20px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);">
+                    <h2 style="color: #ff0080; text-shadow: 0 0 15px #ff0080; font-family: 'Orbitron', sans-serif;">Our Programmes</h2>
+                    <div class="programme-card">
+                        <h4 style="color: #00f2ff;">The Voice of the People</h4>
+                        <p style="color: #00f2ff;">Time: Every Saturday at 10:30 PM</p>
+                    </div>
+                    <div class="programme-card">
+                        <h4 style="color: #00f2ff;">Music Planet</h4>
+                        <p style="color: #00f2ff;">Time: 24x7 Non-Stop World Music</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: #ff0080; border: none; padding: 10px 20px; border-radius: 10px; color: #fff; cursor: pointer;">Close</button>
+                </div>
+            `;
+            const dialog = document.createElement('div');
+            dialog.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;';
+            dialog.innerHTML = programmesContent;
+            document.body.appendChild(dialog);
+        }
+
+        function showAnnouncement() {
+            const announcementContent = `
+                <div style="background: rgba(0, 0, 0, 0.9); padding: 20px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);">
+                    <h2 style="color: #ff0080; text-shadow: 0 0 15px #ff0080; font-family: 'Orbitron', sans-serif;">Announcement</h2>
+                    <p style="color: #00f2ff;">Stay tuned for our upcoming special programmes and community events. We appreciate your continuous support!</p>
+                    <button onclick="this.parentElement.parentElement.remove()" style="background: #ff0080; border: none; padding: 10px 20px; border-radius: 10px; color: #fff; cursor: pointer;">Close</button>
+                </div>
+            `;
+            const dialog = document.createElement('div');
+            dialog.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;';
+            dialog.innerHTML = announcementContent;
+            document.body.appendChild(dialog);
+        }
+
         function showContact() {
-            closeExistingModals();
             const contactContent = `
                 <div style="background: rgba(0, 0, 0, 0.9); padding: 20px; border-radius: 15px; box-shadow: 0 0 20px rgba(0, 242, 255, 0.3); width: 90%; max-width: 500px;">
                     <h2 style="color: #ff0080; text-shadow: 0 0 15px #ff0080; font-family: 'Orbitron', sans-serif;">Contact Us</h2>
@@ -338,17 +394,16 @@
                     <p style="color: #00f2ff;"><a href="https://facebook.com/radiovividvoice" target="_blank" style="color: #00f2ff;">Facebook Page</a></p>
                     <p style="color: #00f2ff;"><a href="https://instagram.com/radio_vivid_voice" target="_blank" style="color: #00f2ff;">Instagram</a></p>
                     <form id="contactForm" style="margin-top: 20px;">
-                        <input type="text" id="name" placeholder="Name" required style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff;">
+                        <input type="text" id="name" placeholder="Name" style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff;">
                         <input type="text" id="location" placeholder="Location" style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff;">
-                        <input type="text" id="subject" placeholder="Subject" required style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff;">
-                        <textarea id="message" placeholder="Message" required style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff; min-height: 100px;"></textarea>
+                        <input type="text" id="subject" placeholder="Subject" style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff;">
+                        <textarea id="message" placeholder="Message" style="width: 100%; margin: 10px 0; padding: 8px; border-radius: 5px; border: none; background: rgba(255, 255, 255, 0.1); color: #fff; min-height: 100px;"></textarea>
                         <button type="button" onclick="sendContact()" style="background: #ff0080; border: none; padding: 10px 20px; border-radius: 10px; color: #fff; cursor: pointer;">Send</button>
-                        <button type="button" onclick="document.querySelector('.modal-dialog').remove()" style="background: #00f2ff; border: none; padding: 10px 20px; border-radius: 10px; color: #000; cursor: pointer; margin-left: 10px;">Close</button>
+                        <button type="button" onclick="this.parentElement.parentElement.parentElement.remove()" style="background: #00f2ff; border: none; padding: 10px 20px; border-radius: 10px; color: #000; cursor: pointer; margin-left: 10px;">Close</button>
                     </form>
                 </div>
             `;
             const dialog = document.createElement('div');
-            dialog.className = 'modal-dialog';
             dialog.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;';
             dialog.innerHTML = contactContent;
             document.body.appendChild(dialog);
@@ -359,12 +414,7 @@
             const location = document.getElementById('location').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-
-            if (!name || !subject || !message) {
-                alert('Please fill in Name, Subject, and Message fields.');
-                return;
-            }
-
+            
             const mailSubject = `${name} + ${location} + ${subject}`;
             const mailBody = `Message: ${message}`;
             window.location.href = `mailto:radiovividvoice@gmail.com?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
